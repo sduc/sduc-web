@@ -31,6 +31,8 @@ cd my personalwebsite
 git init
 git remote add origin git@github.com:sduc/sduc-web.git
 ```
+I am adding a Github repo as remote.
+
 Create a .gitignore with the following content
 ```
 # Hugo default output directory
@@ -208,8 +210,8 @@ rest can be left to default.
 Congratulations, now you should be able to type `yourdomainname.com` in the browser and it should show the hugo website you created.
 
 ## 3. Continous Delivery
-In this section we will se how to setup Circle CI to automatically publish the content to the bucket.
-First create an account on [CircleCI](https://circleci.com/) (it is free), I liked it with my GitHub account.
+In this section we will see how to setup Circle CI to automatically publish the content to the bucket.
+First create an account on [CircleCI](https://circleci.com/) (it is free!). I linked it with my GitHub account.
 If you setup the GIT project to be hosted on Github, circle should now automatically discover your github repo.
 You can setup the project on Circle.
 Once that's done, create a `.circleci/config.yml` file in your Github repo with the following content
