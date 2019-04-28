@@ -3,7 +3,7 @@ title: "Personal Website with Hugo"
 date: 2019-04-28T15:23:20+02:00
 img: "/img/blog/2019-04/personal-website/intro.png"
 tags: ["hugo", "aws", "cms", "circleci", "CI"]
-categories: ["Web"]
+categories: ["Web", "Tutorial"]
 summary: "A short guide on how to manage a personal blog using Hugo, how to host it on AWS S3 and how to maintain it with Continous Integration using Circle CI."
 toc: true
 draft: false

@@ -53,7 +53,7 @@ googleAnalytics            = "UA-139175291-1"
   avatar                   = "/img/profile.jpeg"             # path to image in static dir e.g img/avatar.png 
   author                   = "Sebastien Duc"
   description              = ["Art: Make beautiful stuff!", "Engineering: Build useful stuff!", "Creativity: Make cool stuff!"]           # appears in the site header when set to a non-empty string
-  welcome_head             = "Welcome On To My Universe"
+  welcome_head             = "Welcome On My Personal Blog"
   welcome_word             = "~ Do not take it too seriously ~"
 
   latestpostscount         = 5                             # how many posts to display on the home page
