@@ -24,7 +24,6 @@ commands:
       - aws-s3/sync:
           from: public
           to: 's3://duc-sebastien.com/'
-          arguments: '--dryrun'
           overwrite: true
 jobs:
   build:
