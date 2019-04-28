@@ -1,0 +1,49 @@
+version: 2.1
+orbs:
+  aws-s3: circleci/aws-s3@1.0.8
+commands:
+  hugo-build:
+    steps:
+      - run:
+          name: "Install Hugo"
+          command: | 
+            wget https://github.com/spf13/hugo/releases/download/v0.55.0/hugo_extended_0.55.0_Linux-64bit.tar.gz &&
+            tar xzf hugo_extended_0.55.0_Linux-64bit.tar.gz &&
+            sudo mv hugo /usr/bin/hugo &&
+            rm hugo_extended_0.55.0_Linux-64bit.tar.gz LICENSE README.md
+      - checkout
+      - run:
+          name: "Run Hugo"
+          command: hugo -v --debug
+      - run:
+          name: "List"
+          command: ls -lR public
+
+  s3-deploy:
+    steps:
+      - aws-s3/sync:
+          from: public
+          to: 's3://duc-sebastien.com/'
+          arguments: '--dryrun'
+          overwrite: true
+jobs:
+  build:
+    docker:
+      - image: 'circleci/python:2.7'
+    steps:
+      - hugo-build
+  deploy:
+    docker:
+      - image: 'circleci/python:2.7'
+    steps:
+      - hugo-build
+      - s3-deploy
+
+workflows:
+  version: 2.1
+  build-and-deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master

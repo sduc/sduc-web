@@ -1,0 +1,85 @@
+baseURL                   = "http://duc-sebastien.com"
+builddrafts                = false
+languageCode               = "en-US"
+canonifyurls               = true
+contentdir                 = "content"
+layoutdir                  = "layouts"
+publishdir                 = "public"
+enableEmoji                = true
+hasCJKLanguage             = true
+summaryLength              = 200
+Paginate                   = 3
+
+theme                      = "AllinOne"
+title                      = "Sebastien Duc"
+
+pygmentsuseclasses         = true
+
+
+[permalinks]
+  blog                     = "blog/:year-:month/:slug/"
+
+
+[taxonomies]
+  tag                      = "tags"
+  series                   = "series"
+  category                 = "categories"
+
+
+[menu]
+  [[menu.main]]
+    name                   = "Blog"
+    weight                 = -120
+    identifier             = "blog"
+    url                    = "blog/"  
+
+  [[menu.main]]
+    name                   = "Moment"
+    weight                 = -110
+    identifier             = "moment"
+    url                    = "moment/" 
+
+  [[menu.main]]
+    name                   = "About"
+    weight                 = -100
+    identifier             = "about"
+    url                    = "about/"  
+
+ 
+
+[params]
+  faviconfile              = "/img/profile.jpeg"               # from static/
+  avatar                   = "/img/profile.jpeg"             # path to image in static dir e.g img/avatar.png 
+  author                   = "Sebastien Duc"
+  description              = ["Art: make beautiful stuff!", "Engineering: build useful stuff!", "Creativity: make cool stuff!"]           # appears in the site header when set to a non-empty string
+  welcome_head             = "Welcome On My Page"
+  welcome_word             = "~ Do not take it seriously ~"
+
+  latestpostscount         = 5                             # how many posts to display on the home page
+  bloggroupby              = 'month'
+  dateform                 = "Jan 2, 2006"
+  dateformfull             = "2006-01-02  Monday  15:04:05"
+  noshowreadtime           = false                         # if true, don't show "<x> minutes read" in posts
+
+  # slides
+  slidesDirPath            = "/static/img/header-slides"    # path to image in local dir (path for hugo)
+  slidesDirPathURL         = "/img/header-slides"    # path to image in static dir (for static pages)
+
+  # highlighting 
+  highlightjs              = true
+
+  # latex
+  katex                    = true
+
+  # links
+  email                    = "sebastien.sduc@gmail.com"
+  github                   = "//github.com/sduc"
+  linkedin                 = "//linkedin.com/in/sebastienduc"
+  #px500                    = "//px500"
+  instagram                = "//instagram.com/sebastien.sduc"
+  include_rss              = false                          # include RSS <link> tag in <head> and show RSS icon
+  
+  # analytics
+  googleAnalytics          = "UA-139175291-1"
+    
+    
