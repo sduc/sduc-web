@@ -209,8 +209,69 @@ Congratulations, now you should be able to type `yourdomainname.com` in the brow
 
 ## 3. Continous Delivery
 In this section we will se how to setup Circle CI to automatically publish the content to the bucket.
+First create an account on [CircleCI](https://circleci.com/) (it is free), I liked it with my GitHub account.
+If you setup the GIT project to be hosted on Github, circle should now automatically discover your github repo.
+You can setup the project on Circle.
+Once that's done, create a `.circleci/config.yml` file in your Github repo with the following content
+```yaml
+version: 2.1
+orbs:
+  aws-s3: circleci/aws-s3@1.0.8
+commands:
+  hugo-build:
+    steps:
+      - run:
+          name: "Install Hugo"
+          command: |
+            wget https://github.com/spf13/hugo/releases/download/v0.55.0/hugo_extended_0.55.0_Linux-64bit.tar.gz &&
+            tar xzf hugo_extended_0.55.0_Linux-64bit.tar.gz &&
+            sudo mv hugo /usr/bin/hugo &&
+            rm hugo_extended_0.55.0_Linux-64bit.tar.gz LICENSE README.md
+      - checkout
+      - run:
+          name: "Run Hugo"
+          command: hugo -v --debug
+      - run:
+          name: "List"
+          command: ls -lR public
 
-WIP
+  s3-deploy:
+    steps:
+      - aws-s3/sync:
+          from: public
+          to: 's3://duc-sebastien.com/'
+          overwrite: true
+jobs:
+  build:
+    docker:
+      - image: 'circleci/python:2.7'
+    steps:
+      - hugo-build
+  deploy:
+    docker:
+      - image: 'circleci/python:2.7'
+    steps:
+      - hugo-build
+      - s3-deploy
+
+workflows:
+  version: 2.1
+  build-and-deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
+```
+Make sure to replace the name of the s3 bucket to yours.
+
+This circleci config is using the AWS S3 orb. This assumes you setup a few environment variables on the circleci project.
+Go to the project setting, then Environment Variables: `https://circleci.com/gh/<user-name>/<project-name>/edit#env-vars`
+Create three environment variables, `AWS_ACCES_KEY_ID` which should be equal to the previously create Access Key ID for the IAM user,
+`AWS_SECRET_ACCESS_KEY` and `AWS_REGION` which should be equal to the region in which you created your bucket.
+![circleci env vars](/img/blog/2019-04/personal-website/circleci-1.png)
+
+Congratulations, now everytime you commit to master, your S3 bucket should be updated accordingly with the new content you committed on the repo.
 
 ## References
 [1] https://gohugo.io/getting-started/quick-start/
