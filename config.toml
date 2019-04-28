@@ -14,6 +14,7 @@ theme                      = "AllinOne"
 title                      = "Sebastien Duc"
 
 pygmentsuseclasses         = true
+googleAnalytics            = "UA-139175291-1"
 
 
 [permalinks]
@@ -80,6 +81,5 @@ pygmentsuseclasses         = true
   include_rss              = false                          # include RSS <link> tag in <head> and show RSS icon
   
   # analytics
-  googleAnalytics          = "UA-139175291-1"
     
     
