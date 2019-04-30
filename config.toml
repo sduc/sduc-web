@@ -1,4 +1,4 @@
-baseURL                   = "http://duc-sebastien.com"
+baseURL                   = "https://duc-sebastien.com"
 builddrafts                = false
 languageCode               = "en-US"
 canonifyurls               = true
