@@ -16,3 +16,6 @@ Yoti and Inpher.
 
 He graduated from EPFL in Communication Systems, specializing in Information Security.
 
+You can find his latest GPG key [here](https://pgp.mit.edu/pks/lookup?op=get&search=0xF8A8CACD72C6BCB0).
+His resume is available [here](https://github.com/sduc/resume/raw/master/resume.pdf).
+
