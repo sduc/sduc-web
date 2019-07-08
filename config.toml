@@ -35,12 +35,6 @@ googleAnalytics            = "UA-139175291-1"
     url                    = "blog/"  
 
   [[menu.main]]
-    name                   = "Moment"
-    weight                 = -110
-    identifier             = "moment"
-    url                    = "moment/" 
-
-  [[menu.main]]
     name                   = "About"
     weight                 = -100
     identifier             = "about"
