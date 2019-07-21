@@ -276,6 +276,6 @@ Create three environment variables, `AWS_ACCES_KEY_ID` which should be equal to 
 Congratulations, now everytime you commit to master, your S3 bucket should be updated accordingly with the new content you committed on the repo.
 
 ## References
-[1] https://gohugo.io/getting-started/quick-start/
+[1] [gohugo.io](https://gohugo.io/getting-started/quick-start/)
 
-[2] https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html
+[2] [docs.aws.amazon.com](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html)

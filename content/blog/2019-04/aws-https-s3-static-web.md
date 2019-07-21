@@ -4,6 +4,7 @@ date: 2019-04-30T22:09:12+02:00
 tags: ["aws"]
 categories: ["Web", "Tutorial"]
 summary: "A short guide on how to enable HTTPS on a static webpage served in S3."
+toc: true
 draft: false
 ---
 This tutorial assumes you have followed the [previous](/blog/2019-04/personal-website-with-hugo) tutorial on how to setup a personal web site
